@@ -1,7 +1,7 @@
 package telran.range.exceptions;
 
-public class OutOfRangeMinValueException extends Exception{
-    public OutOfRangeMinValueException(int min, int number) {
-        super(String.format("Out of Range min: %d, number: %d", min, number));
+public class OutOfRangeMaxValueException extends Exception{
+    public OutOfRangeMaxValueException(int max, int value) {
+        super(String.format("Out of Range max: %d, number: %d", max, value));
     }
 }

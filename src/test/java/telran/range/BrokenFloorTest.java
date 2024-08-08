@@ -27,8 +27,7 @@ private int getMinimalBrokenFloor(BallBrokenFloor bbf) {
 void minimalBrokenFloorTest() {
     int [] floors = {200, 17, 1001, 2000};
     for(int i = 0; i < floors.length; i++) {
-        BallBrokenFloor bbf = new BallBrokenFloor(floors[i]);
-         assertEquals(bbf.getMinBrokenFloor(), getMinimalBrokenFloor(bbf));
+        BallBrokenFloor bbf = new BallBrokenFloor(floors[i]);         assertEquals(bbf.getMinBrokenFloor(), getMinimalBrokenFloor(bbf));
     }
 }
 }

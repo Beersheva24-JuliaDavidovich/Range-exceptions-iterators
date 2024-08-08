@@ -7,20 +7,30 @@ import org.junit.jupiter.api.Test;
 public class BrokenFloorTest {
 
 private int getMinimalBrokenFloor(BallBrokenFloor bbf) {
-    int min = 1;
+    int min = 0;
     int max = Integer.MAX_VALUE;
-    int res = -1;
-    int middle = (min + max) / 2;
+    int middle = (max + min) / 2;
+    while (min <= max) {
         try {
             bbf.checkFloor(middle);
             min = middle + 1;
-        } catch (IllegalArgumentException e) {
+        } catch (Exception e) {
             max = middle - 1;
-        } catch (Exception e){
-            max = middle - 1;
-            res = middle;
-        }
-    return res == -1 ? -min - 1 : res;
+        } 
+        middle = (max + min) / 2;
+    }
+    // int res = -1;
+    // int middle = (min + max) / 2;
+    //     try {
+    //         bbf.checkFloor(middle);
+    //         min = middle + 1;
+    //     } catch (IllegalArgumentException e) {
+    //         max = middle - 1;
+    //     } catch (Exception e){
+    //         max = middle - 1;
+    //         res = middle;
+    //     }
+    return min;
     }
 
 @Test
